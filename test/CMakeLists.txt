@@ -19,7 +19,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 # Module/Package Includes
 #
 
-#find_package(RE REQUIRED)
 
 ##############################################################################
 #
@@ -43,9 +42,11 @@ else()
     -Wmissing-declarations
     -Wmissing-prototypes
     -Wnested-externs
+    -Wno-strict-aliasing
     -Wold-style-definition
     -Wshadow -Waggregate-return
     -Wstrict-prototypes
+    -Wuninitialized
     -Wvla
   )
 endif()
@@ -80,6 +81,7 @@ set(SRCS
   conf.c
   convert.c
   crc32.c
+  dd.c
   dns.c
   dsp.c
   dtmf.c
@@ -161,7 +163,7 @@ endif()
 
 set(LINKLIBS re ${OPENSSL_LIBRARIES})
 if(WIN32)
-  list(APPEND LINKLIBS qwave iphlpapi wsock32 ws2_32)
+  list(APPEND LINKLIBS qwave iphlpapi wsock32 ws2_32 crypt32)
 else()
   list(APPEND LINKLIBS m ${RESOLV_LIBRARY})
 endif()

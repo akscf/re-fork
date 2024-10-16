@@ -5,6 +5,149 @@ All notable changes to libre will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.16.0] - 2024-10-02
+
+## What's Changed
+* thread: fix pthread_setname_np NetBSD by @leleliu008 in https://github.com/baresip/re/pull/1182
+* ice: AI_V4MAPPED macro is missing on some BSD systems by @leleliu008 in https://github.com/baresip/re/pull/1181
+* rtp/rtcp: add RTCP Generic NACK packet send (RFC 4585 6.2.1) by @sreimers in https://github.com/baresip/re/pull/1186
+* main/fd_listen: return EMFILE if maxfds is reached by @sreimers in https://github.com/baresip/re/pull/1185
+* ci: build retest for android by @alfredh in https://github.com/baresip/re/pull/1187
+* test: minor cmake cleanup by @alfredh in https://github.com/baresip/re/pull/1188
+* test: fix re_printf format string for multithread test by @alfredh in https://github.com/baresip/re/pull/1190
+* ci: run retest on Fedora by @alfredh in https://github.com/baresip/re/pull/1191
+
+## New Contributors
+* @leleliu008 made their first contribution in https://github.com/baresip/re/pull/1182
+
+**Full Changelog**: https://github.com/baresip/re/compare/v3.15.0...v3.16.0
+
+
+## [v3.15.0] - 2024-08-28
+
+## What's Changed
+* misc: remove HAVE_INET6 by @sreimers in https://github.com/baresip/re/pull/1159
+* dns/rr: fix dns_rr_print underflow by @sreimers in https://github.com/baresip/re/pull/1162
+* test/async: remove AI_ADDRCONFIG by @sreimers in https://github.com/baresip/re/pull/1165
+* retest: update usage message by @robert-scheck in https://github.com/baresip/re/pull/1166
+* add filter_registrar option by @maximilianfridrich in https://github.com/baresip/re/pull/1160
+* sa: add utility function to check if address is multicast by @cmfitch1 in https://github.com/baresip/re/pull/1168
+* tls/sni: skip SNI check if we are client or server_name absent by @maximilianfridrich in https://github.com/baresip/re/pull/1169
+* tls/sni: do not enable client verification when SNI matching is done by @maximilianfridrich in https://github.com/baresip/re/pull/1172
+* dd: Dependency Descriptor RTP header extension by @alfredh in https://github.com/baresip/re/pull/1170
+* aubuf: add AUBUF_TRACE mode with id by @sreimers in https://github.com/baresip/re/pull/1174
+* sip/transp: add client certificate to all TLS transports by @maximilianfridrich in https://github.com/baresip/re/pull/1173
+* tmr: add TMR_INIT by @sreimers in https://github.com/baresip/re/pull/1177
+* sipsess/reply: fix heap-use-after-free bug by @sreimers in https://github.com/baresip/re/pull/1179
+* version 3.15.0 by @alfredh in https://github.com/baresip/re/pull/1180
+
+## New Contributors
+* @cmfitch1 made their first contribution in https://github.com/baresip/re/pull/1168
+
+**Full Changelog**: https://github.com/baresip/re/compare/v3.14.0...v3.15.0
+
+
+## [v3.14.0] - 2024-07-23
+
+## What's Changed
+* aumix: use mutex_alloc() by @alfredh in https://github.com/baresip/re/pull/1142
+* sipreg/reg.c: stop retrying registers early after 401/407 by @maximilianfridrich in https://github.com/baresip/re/pull/1143
+* aumix: add locking in aumix_source_count() by @alfredh in https://github.com/baresip/re/pull/1145
+* test: init err in test_sip_auth_encode() by @alfredh in https://github.com/baresip/re/pull/1146
+* sipreg: refactor response_handler else optimization by @sreimers in https://github.com/baresip/re/pull/1147
+* vidmix: improve mutex usage by @alfredh in https://github.com/baresip/re/pull/1148
+* udp/mcast: use group scopeid as interface for IPv6 by @maximilianfridrich in https://github.com/baresip/re/pull/1149
+* .clangd: suppress -Wgnu-zero-variadic-macro-arguments by @maximilianfridrich in https://github.com/baresip/re/pull/1150
+* ci/build: use only macos-latest by @sreimers in https://github.com/baresip/re/pull/1153
+* cmake: fix resolv on FreeBSD by @sreimers in https://github.com/baresip/re/pull/1152
+* test: use h264_stap_decode_annexb() by @alfredh in https://github.com/baresip/re/pull/1151
+* sipsess/reply: terminate session if no (PR)ACK received after 64*T1 by @maximilianfridrich in https://github.com/baresip/re/pull/1155
+* rtcp: send BYE manually by @alfredh in https://github.com/baresip/re/pull/1154
+* cmake: check accept4 only on linux by @sreimers in https://github.com/baresip/re/pull/1157
+* cmake: fix iOS HAVE_ROUTE_LIST and darwin dns by @sreimers in https://github.com/baresip/re/pull/1158
+* test: check if header and payload is set by @alfredh in https://github.com/baresip/re/pull/1161
+
+
+**Full Changelog**: https://github.com/baresip/re/compare/v3.13.0...v3.14.0
+
+
+## [v3.13.0] - 2024-06-19
+
+## What's Changed
+* http/client: use dynamically sized buffers for PEM setters by @maximilianfridrich in https://github.com/baresip/re/pull/1117
+* tls: allow secure TLS renegotiation by @maximilianfridrich in https://github.com/baresip/re/pull/1121
+* tls: always enable USE_OPENSSL_SRTP by @alfredh in https://github.com/baresip/re/pull/1122
+* main: remove call to openssl init by @alfredh in https://github.com/baresip/re/pull/1120
+* sip/transp: Allow ACK w/o Max-Forwards header by @juha-h in https://github.com/baresip/re/pull/1124
+* net: remove NET_ADDRSTRLEN by @alfredh in https://github.com/baresip/re/pull/1123
+* ci/ios: increase min deployment target by @sreimers in https://github.com/baresip/re/pull/1126
+* tls/http: add certificate chain setters by @maximilianfridrich in https://github.com/baresip/re/pull/1125
+* sipsess/connect: set sess->established immediately on 200 receival by @maximilianfridrich in https://github.com/baresip/re/pull/1128
+* test/cmake: add crypt32 linking for WIN32 by @sreimers in https://github.com/baresip/re/pull/1130
+* ci/sanitizers: use clang-17 by @sreimers in https://github.com/baresip/re/pull/1131
+* ci/sanitizer: add undefined behavior sanitizer by @sreimers in https://github.com/baresip/re/pull/1132
+* sip: verify call-id, to-tag, cseq of INVITE response by @maximilianfridrich in https://github.com/baresip/re/pull/1129
+* ci: remove one unneeded directory change by @alfredh in https://github.com/baresip/re/pull/1134
+* test: change GENERATOR_SSRC from define to type by @alfredh in https://github.com/baresip/re/pull/1133
+* tls: refactoring SNI ctx usage for libressl support by @sreimers in https://github.com/baresip/re/pull/1136
+* test: add test_rtcp_loop() by @alfredh in https://github.com/baresip/re/pull/1137
+* ci/coverage: increase min coverage by @sreimers in https://github.com/baresip/re/pull/1138
+* ci/coverage: use json summary and upload html details by @sreimers in https://github.com/baresip/re/pull/1139
+* sip: add host param to sip_send_conn by @sreimers in https://github.com/baresip/re/pull/1141
+
+
+**Full Changelog**: https://github.com/baresip/re/compare/v3.12.0...v3.13.0
+
+## [v3.12.0] - 2024-05-15
+
+## What's Changed
+* cmake: fix static library build (vcpkg) by @alfredh in https://github.com/baresip/re/pull/1096
+* h264: add STAP-A decode with long startcodes by @alfredh in https://github.com/baresip/re/pull/1101
+* sess,request: deref request and ctrans immediately by @maximilianfridrich in https://github.com/baresip/re/pull/1099
+* ua: enforce magic cookie in Via branch by @maximilianfridrich in https://github.com/baresip/re/pull/1102
+* sip/auth: SHA-256 digest algorithm support by @sreimers in https://github.com/baresip/re/pull/1103
+* ci/coverage: increase min. coverage by @sreimers in https://github.com/baresip/re/pull/1106
+* rtp: fix correct logging text by @alfredh in https://github.com/baresip/re/pull/1109
+* types: fix RE_ARG_SIZE gcc bit fields by @sreimers in https://github.com/baresip/re/pull/1110
+* fmt: use re_fprintf instead of DEBUG_WARNING to avoid deadlock by @alfredh in https://github.com/baresip/re/pull/1112
+* dbg: remove support for logfile by @alfredh in https://github.com/baresip/re/pull/1111
+* test: add usage of rtcp_msg_print() by @alfredh in https://github.com/baresip/re/pull/1105
+* http/client: add setter to disable tls server verification by @maximilianfridrich in https://github.com/baresip/re/pull/1114
+* dbg: mutex should be unlocked while calling print handler by @alfredh in https://github.com/baresip/re/pull/1113
+* Update README.md by @alfredh in https://github.com/baresip/re/pull/1115
+* http/request: reset body mbuf pos on re-sending by @maximilianfridrich in https://github.com/baresip/re/pull/1116
+* bump version by @alfredh in https://github.com/baresip/re/pull/1118
+* cmake: bump soversion by @alfredh in https://github.com/baresip/re/pull/1119
+
+
+**Full Changelog**: https://github.com/baresip/re/compare/v3.11.0...v3.12.0
+
+
+## [v3.11.0] - 2024-04-09
+
+### What's Changed
+* ci/clang-analyze: bump clang version and fix status-bugs by @sreimers in https://github.com/baresip/re/pull/1079
+* main: Flush list of deleted fhs on `fd_poll` errors by @Lastique in https://github.com/baresip/re/pull/1081
+* main: Use slist for fhs delete list. by @Lastique in https://github.com/baresip/re/pull/1082
+* http/server: fix wrong sizeof in verify_msg by @akscf in https://github.com/baresip/re/pull/1083
+* ci/sanitizers: add mmap rnd_bits workaround by @sreimers in https://github.com/baresip/re/pull/1086
+* rtcp: add printing of TWCC packet by @alfredh in https://github.com/baresip/re/pull/1084
+* include: add re_h264.h to re.h by @alfredh in https://github.com/baresip/re/pull/1087
+* sdp: add sdp media lattr apply function the same way as for rattr by @cHuberCoffee in https://github.com/baresip/re/pull/1089
+* av1: improve packetizer by @alfredh in https://github.com/baresip/re/pull/1088
+* test: minor H.264 improvements by @alfredh in https://github.com/baresip/re/pull/1090
+* tls: add session resumption setter by @maximilianfridrich in https://github.com/baresip/re/pull/1091
+* thread/posix: optimize handler and fix gcc arm32 warning by @sreimers in https://github.com/baresip/re/pull/1093
+* h264: fix for Annex-B bitstreams with 4-byte startcode by @alfredh in https://github.com/baresip/re/pull/1092
+* ci/arch: add armv7 check by @sreimers in https://github.com/baresip/re/pull/1085
+* main,httpauth: fix different from the declaration by @jobo-zt in https://github.com/baresip/re/pull/1095
+* httpauth: fix doxygen comment by @alfredh in https://github.com/baresip/re/pull/1097
+
+### New Contributors
+* @akscf made their first contribution in https://github.com/baresip/re/pull/1083
+
+**Full Changelog**: https://github.com/baresip/re/compare/v3.10.0...v3.11.0
+
 
 ## [v3.10.0] - 2024-03-06
 

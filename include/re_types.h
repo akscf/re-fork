@@ -87,9 +87,6 @@ typedef SSIZE_T ssize_t;
 #define RE_BREAKPOINT
 #endif
 
-/* Backwards compat */
-#define BREAKPOINT RE_BREAKPOINT
-
 
 /* Error return/goto debug helpers */
 #ifdef TRACE_ERR
@@ -303,7 +300,7 @@ typedef int re_sock_t;
 #define HAVE_RE_ARG 1
 
 #define RE_ARG_SIZE(type)                                                     \
-	_Generic((type),                                                      \
+	_Generic((0)?(type):(type),                                           \
 	bool:			sizeof(int),                                  \
 	char:			sizeof(int),                                  \
 	unsigned char:		sizeof(unsigned int),                         \

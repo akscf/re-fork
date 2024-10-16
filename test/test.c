@@ -59,6 +59,7 @@ static const struct test tests[] = {
 	TEST(test_auresamp),
 	TEST(test_async),
 	TEST(test_av1),
+	TEST(test_dd),
 	TEST(test_base64),
 	TEST(test_bfcp),
 	TEST(test_bfcp_bin),
@@ -162,6 +163,7 @@ static const struct test tests[] = {
 	TEST(test_rtcp_decode_badmsg),
 	TEST(test_rtcp_packetloss),
 	TEST(test_rtcp_twcc),
+	TEST(test_rtcp_loop),
 	TEST(test_sa_class),
 	TEST(test_sa_cmp),
 	TEST(test_sa_decode),
@@ -843,7 +845,7 @@ int test_multithread(void)
 	for (i=0; i<RE_ARRAY_SIZE(threadv); i++) {
 
 		if (threadv[i].err != 0) {
-			re_printf("%u failed: %-30s  [%d] [%m]\n", i,
+			re_printf("%zu failed: %-30s  [%d] [%m]\n", i,
 				  threadv[i].test->name,
 				  threadv[i].err, threadv[i].err);
 			err = threadv[i].err;

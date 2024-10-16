@@ -169,7 +169,6 @@ legend:
 
 * [RFC 1321](https://tools.ietf.org/html/rfc1321) - The MD5 Message-Digest Algorithm
 * [RFC 1886](https://tools.ietf.org/html/rfc1886) - DNS Extensions to support IP version 6
-* [RFC 2032](https://tools.ietf.org/html/rfc2032) - RTP Payload Format for H.261 Video Streams
 * [RFC 2616](https://tools.ietf.org/html/rfc2616) - Hypertext Transfer Protocol -- HTTP/1.1
 * [RFC 2617](https://tools.ietf.org/html/rfc2617) - HTTP Authentication: Basic and Digest Access Authentication
 * [RFC 2782](https://tools.ietf.org/html/rfc2782) - A DNS RR for Specifying the Location of Services (DNS SRV)
@@ -224,13 +223,14 @@ legend:
 
 |  System | Support type | Supported versions | Notes |
 |---|---|---|---|
-| Linux | Tier 1 | glibc >= 2.27 (Ubuntu 18.04) | |
+| Linux | Tier 1 | glibc >= 2.27 | |
+| Linux | Tier 1 | musl >= 1.2 | |
 | macOS | Tier 1 | macOS >= 10.10 | |
 | Windows | Tier 1 | >= Windows 8 | MinGW-w64, >= VS 2019 |
 | Android | Tier 2 | | |
 | iOS | Tier 2 | | |
-| FreeBSD | Tier 2 | >= 11 | |
-| OpenBSD | Tier 2 | >= 6.7 | |
+| FreeBSD | Tier 2 | >= 12 | |
+| OpenBSD | Tier 2 | >= 7.4 | |
 | Linux | Tier 2 | uClibc | |
 
 
@@ -254,6 +254,7 @@ legend:
 * GNU C Library (glibc)
 * Windows C Run-Time Libraries (CRT)
 * uClibc
+* musl
 
 
 ### Supported compilers:
